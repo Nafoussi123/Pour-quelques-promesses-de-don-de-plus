@@ -1,0 +1,28 @@
+{% block title %}Bonjour{% endblock %}
+
+{% block contenu %} 
+    <h1>Merci pour votre don. 
+        Vous êtes bien ajouté à notre base.</h1>
+
+{% for utilisateur in utilisateurs %}
+    <h2>{{ utilisateur['nom'] }}</h2>
+    <h3>{{ utilisateur['prenom'] }} </h3>
+    <h4>{{ utilisateur['adresse'] }} </h4>
+    <h5>{{ utilisateur['email'] }} </h5>
+    <h6>{{ utilisateur['somme'] }} </h6>
+{% endfor %}
+
+<h2> l'association a récolté {{total}} euros</h2>
+    {% for i in utilisateurs %} 
+        <h3>{{i['nom']}}</h3>
+        <h3>{{i['prenom']}}</h3>
+        <h3>{{i['don']}}</h3>
+    {%endfor %}
+
+{% endblock %}
+
+</head>
+    <body>
+        <a href="{{url_for('index')}}"><img src="static\icon-precedent-1.gif"></a>
+    </body>
+</html>    
